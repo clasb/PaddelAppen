@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="PaddelAppen.ListItemXaml">
+	<ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            
+            <Label Text="Name" />
+            <Entry Text="{Binding Path=Name}" x:Name="nameEntry" Placeholder="point name" />
+            
+            <Label Text="Notes" />
+            <Entry Text="{Binding Path=Notes}" x:Name="notesEntry" />
+            
+            <Label Text="Lat" />
+            <Entry Text="{Binding Path=Lat}" x:Name="coordXEntry" />
+
+                <Label Text="Ex: 59.385394" />
+
+            <Label Text="Long" />
+            <Entry Text="{Binding Path=Long}" x:Name="coordYEntry" />
+
+                <Label Text="Ex: 13.498559" />
+
+            <Button Text="Save" Clicked="OnSaveActivated" />
+            <Button Text="Delete" Clicked="OnDeleteActivated" />
+            <Button Text="Cancel" Clicked="OnCancelActivated" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaddelAppen.Views.LivePage">
+    <StackLayout VerticalOptions="FillAndExpand" 
+                 Padding="10" 
+                 BackgroundColor="White">
+        <StackLayout VerticalOptions="FillAndExpand"
+            x:Name="MapStack">
+
+        </StackLayout>
+        <StackLayout 
+            HorizontalOptions="StartAndExpand" 
+            Orientation="Vertical">
+            <!--<Button
+                Text="TestMoveMap"
+                Command="{Binding TestMoveMapCommand}"
+                x:Name="TestMoveButton"
+                />-->
+            <Grid HorizontalOptions="LayoutOptions.Center"
+              VerticalOptions="LayoutOptions.Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0" Grid.Column="0"
+                    Text="Hastighet:" />
+                <Label 
+                    Grid.Row="0" Grid.Column="1"
+                    Text="{Binding Speed}" 
+                    x:Name="Score" 
+                    TextColor="Black" />
+                <Label
+                    Grid.Row="0" Grid.Column="2"
+                    Text="Längd:" />
+                <Label 
+                    Grid.Row="0" Grid.Column="3"
+                    Text="{Binding DistanceTotal, StringFormat='{0} km'}" 
+                    x:Name="DistanceTravelled" 
+                    TextColor="Black" />
+                <Label
+                    Grid.Row="1" Grid.Column="0"
+                    Text="Paddlat:" />
+                <Label 
+                    Grid.Row="1" Grid.Column="1"
+                    Text="{Binding DistanceTravelled, StringFormat='{0} m'}" 
+                    x:Name="DistanceTotal" 
+                    TextColor="Black" />
+                <Label
+                    Grid.Row="1" Grid.Column="2"
+                    Text="Återstår:" />
+                <Label 
+                    Grid.Row="1" Grid.Column ="3"
+                    Text="{Binding DistanceRemaining, StringFormat='~{0} m'}" 
+                    x:Name="DistanceRemaining" 
+                    TextColor="Black" />
+                
+            </Grid>
+            <Button
+                    Text="{Binding ButtonText}"
+                    x:Name="StartButton"
+                    Command="{Binding StartMapTrackingCommand}"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    BorderColor="Black"
+                    BorderRadius="5"
+                    BorderWidth="1"
+                    Scale="0.7"/>/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

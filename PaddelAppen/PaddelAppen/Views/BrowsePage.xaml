@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="PaddelAppen.BrowsePage">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Paddel" ForegroundColor="White" Font="Italic,32" />
+                        <Span Text="Appen" ForegroundColor="White" Font="32" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label Text="Sök efter intressepunkter.." 
+               VerticalOptions="Center" />
+        <Grid HorizontalOptions="LayoutOptions.Center"
+              VerticalOptions="LayoutOptions.Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+        
+        <Button Grid.Row ="0" Grid.Column="0"
+                BackgroundColor="White"
+                TextColor="Black"
+                x:Name="MapPageButton"
+                Command="{Binding MapButtonCommand}"
+                Text="På karta" />
+        <Button Grid.Row="1" Grid.Column="0"
+                BackgroundColor="White"
+                TextColor="Black"
+                x:Name="ListPageButton"
+                Command="{Binding ListButtonCommand}"
+                Text="I lista" />
+        <Button Grid.Row="2" Grid.Column="0"
+                BackgroundColor="White"
+                TextColor="Black"
+                x:Name="NearbyPageButton"
+                Command="{Binding NearbyButtonCommand}"
+                Text="I närheten" />
+        <!--<Button Grid.Row="1" Grid.Column="1"
+                BackgroundColor="White"
+                TextColor="Black"
+                x:Name="FavouritesPageButton"
+                Command="{Binding FavouritesButtonCommand}"
+                Text="Favoriter" />-->
+         
+        </Grid>
+        <!--<Label  x:Name="LocationText"
+                Text="Hej" />
+        <Button 
+                BackgroundColor="White"
+                TextColor="Black"
+                x:Name="FavouritesPageButton"
+                Text="Test"
+                Clicked="OnButtonClicked"/> -->
+    </StackLayout>
+</ContentPage>

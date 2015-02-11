@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+					   x:Class="PaddelAppen.DetailsPage">
+    <StackLayout VerticalOptions="StartAndExpand" 
+                 Padding="30" 
+                 BackgroundColor="White">
+        
+        <StackLayout 
+            x:Name="MapStack">
+            
+        </StackLayout>
+        <StackLayout 
+            HorizontalOptions="StartAndExpand" 
+            Orientation="Horizontal">
+            <Label 
+                Text="{Binding PointScore}" 
+                x:Name="Score" 
+                TextColor="Black" />
+            <Label 
+                Text="{Binding PointDistance}" 
+                x:Name="TrailDistance" 
+                TextColor="Black" />
+            
+        </StackLayout>
+        
+        <TableView x:Name="TableVie">
+            <TableView.Root>
+                <TableSection
+                    Title="{Binding PointName}"
+                    x:Name="TitleName">
+                    <TextCell 
+                        Text="Beskrivning" 
+                        Detail="{Binding PointDescription}" 
+                        x:Name="DescriptionCell"
+                        DetailColor="Gray"
+                        TextColor="Black" />
+                    <!--<TextCell 
+                        Text="Kommentarer"
+                        Detail="{Binding PointComments}"
+                        x:Name="CommentsCell"
+                        DetailColor="Gray"
+                        TextColor="Black" />-->
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+        <Button 
+                Command="{Binding LiveCommand}" 
+                Text="Paddla rutten"
+                x:Name="Live" 
+                TextColor="Black"
+                BackgroundColor="White"
+                BorderColor="Black"
+                BorderRadius="5"
+                BorderWidth="1"
+                Scale="0.7"/>
+    </StackLayout>
+</ContentPage>
